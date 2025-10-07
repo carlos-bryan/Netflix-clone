@@ -16,6 +16,8 @@ img{display:block;max-width:100%}
 
 .container{max-width:var(--container-max);margin:0 auto;padding:0 20px}
 
+.demo-banner{position:fixed;left:0;right:0;top:48px;z-index:80;background:linear-gradient(90deg,#ffdede,#fff3f3);color:#6b0000;padding:8px 12px;text-align:center;font-weight:700;border-bottom:2px solid rgba(0,0,0,0.06)}
+
 /* Header */
 .site-header{position:fixed;left:0;right:0;top:0;z-index:40;background:linear-gradient(180deg,rgba(0,0,0,0.7),transparent);padding:12px 0}
 .header-inner{display:flex;align-items:center;justify-content:space-between}
