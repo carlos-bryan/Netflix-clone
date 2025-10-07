@@ -79,3 +79,25 @@ html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial;background:var(
 	.login-panel{padding:20px}
 }
 
+/* Mobile improvements */
+@media (max-width:480px){
+	.login-header .header-inner{padding:0 12px}
+	.login-header .logo img{height:38px}
+	.login-header{padding:8px 0}
+	.login-main{padding-top:72px}
+	.login-panel{max-width:92%;padding:20px;border-radius:8px}
+	.login-panel h1{font-size:1.3rem}
+	.login-form input{padding:12px;font-size:0.95rem}
+	.password-row{flex-direction:row}
+	.password-row input{flex:1}
+	.password-row .toggle-pw{padding:10px 12px}
+	.btn-primary{width:100%;padding:12px}
+	.help{font-size:0.95rem}
+}
+
+@media (max-width:360px){
+	.login-header .logo img{height:34px}
+	.login-panel{padding:16px}
+	.login-form label{font-size:0.85rem}
+}
+
