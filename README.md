@@ -1,4 +1,4 @@
-# Media Demo (Netflix-clone)
+# Netflix (Netflix-clone)
 
 > Projeto de estudo: uma landing simples inspirada no visual de serviços de streaming, com páginas de login e recuperação de senha.
 
@@ -23,7 +23,7 @@ Estrutura do projeto
   - `js/`
   - `forgot-password/`
 
-Demo & repositório
+Repositório
 
 Repositório remoto: https://github.com/carlos-bryan/Netflix-clone
 
