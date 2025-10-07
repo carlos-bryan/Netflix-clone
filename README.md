@@ -1,6 +1,6 @@
-# Netflix-clone
+# Media Demo (Netflix-clone)
 
-> Projeto de estudo: uma landing simples inspirada no visual da Netflix, com páginas de login e recuperação de senha.
+> Projeto de estudo: uma landing simples inspirada no visual de serviços de streaming, com páginas de login e recuperação de senha.
 
 Este repositório contém apenas o front-end estático (HTML, CSS e JavaScript) usado para aprendizado e demonstração.
 
