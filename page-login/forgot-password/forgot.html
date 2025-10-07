@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Recuperar senha - Netflix Clone</title>
+  <link rel="stylesheet" href="../css/style-login.css">
+</head>
+<body>
+    <div class="login-page">
+      <header class="login-header">
+        <div class="container header-inner">
+          <a href="/index.html" class="logo"><img src="/img/logo.png" alt="Netflix"></a>
+          <div class="header-actions">
+            <a href="../login.html" class="btn back-btn">Voltar</a>
+          </div>
+        </div>
+      </header>
+
+    <main class="login-main">
+      <div class="login-panel">
+        <h1>Recuperar senha</h1>
+        <p>Informe seu email e enviaremos um link para recuperar sua conta.</p>
+        <form id="forgotForm" class="login-form" novalidate>
+          <label for="femail">Email</label>
+          <input id="femail" type="email" required autocomplete="email">
+          <div id="forgotFeedback" class="form-feedback" aria-live="polite"></div>
+          <button type="submit" class="btn btn-primary">Enviar link</button>
+        </form>
+      </div>
+    </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('forgotForm');
+      const femail = document.getElementById('femail');
+      const fb = document.getElementById('forgotFeedback');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        fb.textContent = '';
+        const em = femail.value.trim();
+        if (!em || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) {
+          fb.textContent = 'Informe um email válido.';
+          femail.focus();
+          return;
+        }
+        // Simular envio de link
+        fb.style.color = '#c8ffd8';
+        fb.textContent = 'Link enviado (simulação). Verifique seu email.';
+      });
+    });
+  </script>
+</body>
+</html>

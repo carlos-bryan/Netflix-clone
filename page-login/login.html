@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Entrar - Netflix Clone</title>
+        <link rel="stylesheet" href="css/style-login.css">
+    </head>
+    <body>
+        <div class="login-page">
+            <header class="login-header">
+                <div class="container header-inner">
+                    <a href="/index.html" class="logo"><img src="/img/logo.png" alt="Netflix"></a>
+                    <div class="header-actions">
+                        <a href="/index.html" class="btn back-btn" aria-label="Voltar à página inicial" data-i18n="back">Voltar</a>
+                    </div>
+                </div>
+            </header>
+
+            <main class="login-main">
+                <div class="login-panel">
+                                <h1 data-i18n="login">Entrar</h1>
+                                <form id="loginForm" class="login-form" novalidate>
+                                    <label for="email" data-i18n="labelEmail">Email</label>
+                                    <input id="email" type="email" name="email" data-i18n-placeholder="emailPlaceholder" required autocomplete="email" autofocus>
+
+                                    <label for="password" data-i18n="labelPassword">Senha</label>
+                                    <div class="password-row">
+                                        <input id="password" type="password" name="password" required autocomplete="current-password">
+                                        <button type="button" class="btn toggle-pw" id="togglePw" aria-pressed="false" aria-label="Mostrar senha">Mostrar</button>
+                                    </div>
+
+                                                        <div class="form-row">
+                                                            <label class="remember"><input id="remember" type="checkbox"> <span data-i18n="remember">Lembrar-me</span></label>
+                                                            <a href="forgot-password/forgot.html" class="forgot" data-i18n="forgot">Esqueci a senha</a>
+                                                        </div>
+
+                                    <div id="formFeedback" class="form-feedback" aria-live="polite"></div>
+
+                                    <button id="loginBtn" type="submit" class="btn btn-primary" data-i18n="login">Entrar</button>
+                                </form>
+
+                                <p class="help" data-i18n="signupText">Ainda não tem uma conta? <a href="../index.html">Assine agora</a></p>
+                </div>
+            </main>
+
+        <script src="js/index-login.js" defer></script>
+    </body>
+    </html>

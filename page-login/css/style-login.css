@@ -1,0 +1,81 @@
+
+:root{--bg:#141414;--panel:#111;--panel-glass:rgba(0,0,0,0.55);--accent:#e50914;--muted:#a8a8a8}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:#fff}
+
+/* make the full page use the hero background (with fallback SVG) */
+
+.login-page{
+	min-height:100vh;
+	position:relative;
+	/* use SVG pattern as primary background with JPG as fallback */
+				/* primary: JPG photo (imagem-background.jpg) as requested) with SVG as fallback */
+				background-image: url('/img/imagem-background.jpg'), url('/img/background.svg');
+	background-size: cover, cover;
+	background-position: center center, center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed; /* subtle parallax on capable devices */
+	display:flex;
+	flex-direction:column;
+	color: #fff;
+}
+
+/* color wash + dark overlay for contrast */
+.login-page::before{
+	content: '';
+	position: absolute;
+	inset: 0;
+	/* match main hero darkness and gradient stops */
+	background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.8) 60%);
+	mix-blend-mode: normal;
+	pointer-events: none;
+}
+
+/* subtle warm/red top-left wash to match branding */
+.login-page::after{
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: radial-gradient(800px 400px at 10% 10%, rgba(229,9,20,0.08), rgba(155,37,255,0.02) 40%, transparent 60%);
+	pointer-events: none;
+}
+
+/* make header match main header styling */
+.login-header{position:fixed;left:0;right:0;top:0;z-index:40;background:linear-gradient(180deg,rgba(0,0,0,0.7),transparent);padding:12px 0}
+.login-header .header-inner{display:flex;align-items:center;justify-content:space-between;padding:0 24px}
+.login-header .logo img{height:44px}
+/* back button: move to top-left, small circular icon-like button */
+/* back button: move to top-right (near edge) */
+.login-header .back-btn{position:relative;background:rgba(0,0,0,0.48);border:1px solid rgba(255,255,255,0.06);color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600}
+.login-header .back-btn:hover{background:rgba(255,255,255,0.04)}
+/* forgot button top-right */
+/* removed .forgot-top; forgot link now lives in form center */
+
+.login-main{display:flex;align-items:center;justify-content:center;flex:1;padding:20px;padding-top:88px}
+.login-panel{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.35));backdrop-filter: blur(6px);-webkit-backdrop-filter: blur(6px);width:100%;max-width:420px;padding:36px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+.login-panel h1{margin:0 0 18px;font-size:1.6rem}
+.login-form{display:flex;flex-direction:column;gap:12px}
+.login-form label{font-size:0.9rem;color:var(--muted)}
+.login-form input{padding:12px;border-radius:6px;border:0;background:rgba(0,0,0,0.6);color:#fff}
+
+.password-row{display:flex;gap:10px;align-items:center}
+.password-row .toggle-pw{padding:8px 10px;background:rgba(255,255,255,0.04);border-radius:6px;border:0;color:#fff}
+.form-row{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.remember{font-size:0.95rem;color:var(--muted);display:inline-flex;align-items:center;gap:8px}
+/* custom checkbox: hide native checkbox and use span for visual */
+.remember input[type="checkbox"]{position:absolute;opacity:0;pointer-events:auto;width:1px;height:1px}
+.remember span{position:relative;padding-left:26px}
+.remember span::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:18px;height:18px;border:2px solid rgba(255,255,255,0.15);border-radius:4px;background:transparent}
+.remember input[type="checkbox"]:checked + span::before{background:var(--accent);border-color:var(--accent)}
+.remember input[type="checkbox"]:checked + span::after{content:'\2713';position:absolute;left:4px;top:50%;transform:translateY(-50%);font-size:12px;color:#fff}
+.forgot{font-size:0.9rem;color:var(--muted);text-decoration:underline}
+.form-feedback{min-height:20px;margin-top:6px;color:#ffd2d2}
+.btn{padding:12px 14px;border-radius:6px;border:0;cursor:pointer}
+.btn-primary{background:var(--accent);color:#fff;font-weight:700}
+.help{color:var(--muted);margin-top:14px;font-size:0.95rem}
+.help a{color:#fff;text-decoration:underline}
+
+@media (max-width:420px){
+	.login-panel{padding:20px}
+}
+

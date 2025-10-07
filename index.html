@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Netflix Clone</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="theme-color" content="#000000">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#" class="brand logo" aria-label="Página inicial">
+                <img src="img/logo.png" alt="Netflix logo">
+            </a>
+
+            <div class="header-actions">
+                <select id="languageSelect" class="language-select" aria-label="Selecionar idioma">
+                    <option value="pt">Português (BR)</option>
+                    <option value="en">English (US)</option>
+                </select>
+
+                <a href="page-login/login.html" class="btn login-btn" data-i18n="login">Entrar</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="hero">
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="container hero-content">
+                    <h1 class="hero-title" data-i18n="heroTitle">Filmes, séries e muito mais. Sem limites.</h1>
+                    <p class="hero-subtitle" data-i18n="heroSubtitle">Assista onde quiser. Cancele quando quiser.</p>
+                    <p class="hero-text" data-i18n="heroText">Pronto para assistir? Informe seu email para criar ou reiniciar sua assinatura.</p>
+
+                    <form id="ctaForm" class="email-form" novalidate>
+                        <input id="emailInput" type="email" class="email-input" data-i18n-placeholder="emailPlaceholder" placeholder="Email" required aria-label="Seu email">
+                        <button id="ctaButton" type="submit" class="btn btn-primary" data-i18n="ctaButton">Vamos lá &gt;</button>
+                    </form>
+        </div>
+    </main>
+
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <div class="footer-links">
+                        <a href="#" data-section="faq">Perguntas frequentes</a>
+                        <a href="#" data-section="help">Central de ajuda</a>
+                        <a href="#" data-section="account">Conta</a>
+                        <a href="#" data-section="press">Imprensa</a>
+                </div>
+                <div class="footer-copy">© 2025 Netflix Clone - Projeto de demonstração</div>
+            </div>
+        </footer>
+            <!-- footer modal -->
+            <div id="footerModal" class="footer-modal" aria-hidden="true">
+                <div class="footer-modal-inner">
+                    <button id="modalClose" class="modal-close">×</button>
+                    <div id="modalContent"></div>
+                </div>
+            </div>
+
+    <script src="js/index.js" defer></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function(){
+                const modal = document.getElementById('footerModal');
+                const modalContent = document.getElementById('modalContent');
+                const modalClose = document.getElementById('modalClose');
+                const map = {
+                    faq: '<h2>Perguntas frequentes</h2><p>Esta é uma versão demo; aqui iriam as perguntas mais comuns.</p>',
+                    help: '<h2>Central de ajuda</h2><p>Recursos e guias para resolver problemas básicos.</p>',
+                    account: '<h2>Conta</h2><p>Informações sobre sua conta e planos.</p>',
+                    press: '<h2>Imprensa</h2><p>Material para imprensa e contatos.</p>'
+                };
+
+                document.querySelectorAll('.footer-links a[data-section]').forEach(a=>{
+                    a.addEventListener('click', function(e){
+                        e.preventDefault();
+                        const key = a.getAttribute('data-section');
+                        modalContent.innerHTML = map[key] || '<p>Conteúdo indisponível.</p>';
+                        modal.setAttribute('aria-hidden','false');
+                    });
+                });
+                modalClose.addEventListener('click', ()=> modal.setAttribute('aria-hidden','true'));
+                modal.addEventListener('click', (e)=>{ if(e.target === modal) modal.setAttribute('aria-hidden','true')});
+            });
+        </script>
+</body>
+</html>

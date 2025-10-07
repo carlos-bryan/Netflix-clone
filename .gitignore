@@ -1,0 +1,27 @@
+# Node
+node_modules/
+
+# Env
+.env
+
+# Editor
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Misc
+.history/
+coverage/
+
+# Build
+dist/
+
+# OS generated
+Thumbs.db
